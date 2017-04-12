@@ -1,0 +1,6 @@
+*.qgs~
+*.log
+*.ffs
+*.recover
+*.pyc
+*.tmp.py

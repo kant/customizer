@@ -1,0 +1,3 @@
+[submodule "QGEP"]
+	path = QGEP
+	url = git@github.com:QGEP/QGEP.git

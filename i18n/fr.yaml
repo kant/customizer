@@ -2,41 +2,41 @@ layers:
   vw_qgep_wastewater_structure:
     name: chambre
     tabs:
-      - General: Général
-      - Cover: Couvercle
-      - Wastewater Structure: Ouvrage
-      - Manhole: Chambre
-      - Special Structure: Ouvrage spécial
-      - Discharge Point: Exutoir
-      - Infiltration Installation: Installation dinfiltration
-      - Wastewater Node: Noeud
-      - Covers: Couvercles
-      - Structure Parts: Elément douvrage
-      - Maintenance: Maintenance
-      - Wastewater Nodes: Noeuds
-      - Files: Fichiers
+      General: Général
+      Cover: Couvercle
+      Wastewater Structure: Ouvrage
+      Manhole: Chambre
+      Special Structure: Ouvrage spécial
+      Discharge Point: Exutoir
+      Infiltration Installation: Installation dinfiltration
+      Wastewater Node: Noeud
+      Covers: Couvercles
+      Structure Parts: Elément douvrage
+      Maintenance: Maintenance
+      Wastewater Nodes: Noeuds
+      Files: Fichiers
     additional_translations:
-      - manhole_function: fonction
-      - _depth: profondeur
+      manhole_function: fonction
+      _depth: profondeur
 
   vw_qgep_reach:
-    name: utronçon
+    name: tronçon
     tabs:
-      - General: Général
-      - Reach: Tronçon
-      - Wastewater Networkelement: Element du réseau
-      - Channel: Canalisation
-      - Wastewater Structure: Ouvrage
-      - Reach Points: Point de tronçon
-      - Maintenance: Maintenance
-      - Files: Fichiers
+      General: Général
+      Reach: Tronçon
+      Wastewater Networkelement: Element du réseau
+      Channel: Canalisation
+      Wastewater Structure: Ouvrage
+      Reach Points: Point de tronçon
+      Maintenance: Maintenance
+      Files: Fichiers
     additional_translations:
 
   vw_qgep_maintenance:
     name: Maintenance
 
   vw_qgep_damage:
-    name: uDégâts
+    name: Dégâts
 
 
 

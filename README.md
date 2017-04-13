@@ -4,3 +4,8 @@ It handles the following changes in the project:
 - translation (fields, forms, layers, legend, etc.)
 - custom symbology
 - additional background layers
+
+
+Use `customizer.sh config.yaml` to customize the QGEP project.
+
+See the template (congig.yaml.template) for an example.

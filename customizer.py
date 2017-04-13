@@ -33,8 +33,8 @@ iface.actionShowPythonDialog().trigger()
 ####################
 # CONFIG UPDATED FROM customizer.sh
 # these 3 lines should be automaticaly updated by customizer.sh by sed commands
-original_project = '/home/drouzaud/Documents/QGEP/sige/QGEP-customizer/../QGEP/project/qgep_en.qgs'
-config_file = '/home/drouzaud/Documents/QGEP/sige/QGEP-customizer/config.yaml.template'
+original_project = '/home/drouzaud/Documents/QGEP/sige/QGEP-customizer/QGEP/project/qgep_en.qgs'
+config_file = '/home/drouzaud/Documents/QGEP/sige/sige-config.yaml'
 translation_file = '/home/drouzaud/Documents/QGEP/sige/QGEP-customizer/i18n/fr.yaml'
 
 ####################
@@ -236,8 +236,16 @@ if 'background_layers' in config_data:
 if 'map_center' in config_data:
     iface.mapCanvas().setCenter(QgsPoint(config_data['map_center']['x'], config_data['map_center']['y']))
 
+# integrate macros to save symbology
+symbology_macro_file = '/home/drouzaud/Documents/QGEP/sige/QGEP-customizer/macros_symbology.py'
+with open (symbology_macro_file, "r") as myfile:
+    code = myfile.read()
+print QgsProject.instance().writeEntry( "Macros", "/pythonCode", code )
+QgsProject.instance().setDirty( True )
+
 # save project
-QgsProject.instance().write(new_project)
+#QgsProject.instance().write(new_project)
+iface.actionSaveProject().trigger()
 
 # exit
 QCoreApplication.processEvents()

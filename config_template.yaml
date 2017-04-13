@@ -3,15 +3,15 @@
 # Use absolute paths!
 
 # QGIS executable
-qgis_bin: ${HOME}/opt/QGIS2/build/output/bin/qgis
+qgis_bin: /home/user/opt/QGIS2/build/output/bin/qgis
 
 # Path to the project to be created
-output_project: ${HOME}/Documents/QGEP/sige/qgis-project/qgep_sige_auto.qgs
+output_project: /home/user/Documents/QGEP/sige/qgis-project/qgep_sige_auto.qgs
 
 # Custom symbology file
 # Can be commented out to use default symbology
 # To create a symbology adapt and use copy_style.py script
-#style_file: ${HOME}/Documents/QGEP/qgis-project/styles/qgep.style
+#style_file: /home/user/Documents/QGEP/qgis-project/styles/qgep.style
 
 # To change the CRS, uncomment this
 #srid: 2056
@@ -23,9 +23,9 @@ map_center:
 
 # Add additional layers
 background_layers:
-- file: /${HOME}/Documents/cadastre/cadastre_pg.qgs
+- file: //home/user/Documents/cadastre/cadastre_pg.qgs
   group: Cadastral data
-- file: /${HOME}/Documents/qwat/qwat.qgs
+- file: //home/user/Documents/qwat/qwat.qgs
   group: Network
 
 # If you wish to use a Quickfinder project search, uncomment this line

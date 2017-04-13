@@ -9,7 +9,7 @@ while getopts ":ud" opt; do
     u)
       UPDATE=YES
       ;;
-    o)
+    d)
       CLOSE_QGIS=NO
       ;;
     \?)
@@ -22,6 +22,11 @@ while getopts ":ud" opt; do
   esac
 done
 shift $(expr $OPTIND - 1)
+
+if [ ! -f $1 ]; then
+  echo -e "\e[31mconfig file does not exist\e[39m" >&2
+  exit 1
+fi
 
 CONFIG_FILE=$(realpath $1)
 
@@ -41,16 +46,21 @@ fi
 echo -e "\e[34mreading config in $1 ...\e[39m"
 eval "$(${DIR}/tools/yaml.sh $CONFIG_FILE)"
 
-# QGIS
-echo -e "\e[34mopening QGIS to customize the project ...\e[39m"
-sed -i -r "s@^original_project = '.*'\$@original_project = '${DIR}/../QGEP/project/qgep_en.qgs'@" ${DIR}/customizer.py
+# Tweaks
+echo -e "\e[34mTweaking python scripts by sed commands ...\e[39m"
+sed -i -r "s@^original_project = '.*'\$@original_project = '${DIR}/QGEP/project/qgep_en.qgs'@" ${DIR}/customizer.py
 sed -i -r "s@^config_file = '.*'\$@config_file = '${CONFIG_FILE}'@" ${DIR}/customizer.py
 sed -i -r "s@^translation_file = '.*'\$@translation_file = '${DIR}/i18n/fr.yaml'@" ${DIR}/customizer.py
+sed -i -r "s@^symbology_macro_file = '.*'\$@symbology_macro_file = '${DIR}/macros_symbology.py'@" ${DIR}/customizer.py
 if [[ $CLOSE_QGIS =~ YES ]]; then
   sed -i -r 's/^[#]?QgsApplication\.exitQgis\(\)/QgsApplication.exitQgis()/' ${DIR}/customizer.py
 else
   sed -i -r 's/^[#]?QgsApplication\.exitQgis\(\)/#QgsApplication.exitQgis()/' ${DIR}/customizer.py
 fi
+sed -i -r "s@^style_file = '.*'\$@style_file = '${style_file}'@" ${DIR}/macros_symbology.py
+
+# QGIS
+echo -e "\e[34mopening QGIS to customize the project ...\e[39m"
 set +e # QGIS seg faults, but no issue on project
 $qgis_bin --nologo --noplugins --noversioncheck --code ${DIR}/customizer.py &> /dev/null
 set -e

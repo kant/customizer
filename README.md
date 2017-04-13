@@ -9,3 +9,5 @@ It handles the following changes in the project:
 Use `customizer.sh config.yaml` to customize the QGEP project.
 
 See the template (congig.yaml.template) for an example.
+
+Adapt and use in QGIS console the script `copy_style.py` to create the custom layer style file.

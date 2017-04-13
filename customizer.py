@@ -43,7 +43,7 @@ pg_service = "pg_qgep"
 with open(config_file, 'r') as stream:
     config_data = yaml.load(stream)
 new_project = config_data['output_project']
-style_file = config_data['style_file']
+
 style_layer_ids = ['vw_qgep_reach', 'vw_qgep_wastewater_structure']
 
 #######################
@@ -183,28 +183,29 @@ for layer in QgsProject.instance().mapLayers().values():
 
 
 # update styles from other project
-errMsg = ''
-file = QFile(style_file)
-file.open(QFile.ReadOnly | QFile.Text)
-doc = QDomDocument()
-doc.setContent(file)
-root = doc.elementsByTagName('qgis.custom.style')
-nodes = root.at(0).childNodes()
-for i in range(0, nodes.count()):
-    elem = nodes.at(i).toElement()
-    if elem.tagName() != 'layer' or not elem.hasAttribute('id'):
-        continue
-    layer_id = elem.attribute('id')
-    if layer_id not in style_layer_ids:
-        print('skipping ', layer_id)
-    layer = QgsProject.instance().mapLayer(layer_id)
-    if not layer:
-        print('layer not found', layer_id)
-        continue
-    print('loading', layer_id)
-    style = elem.firstChild()
-    style.removeChild(style.firstChildElement('edittypes'))
-    layer.readStyle(style, errMsg)
+if 'style_file' in config_data:
+    errMsg = ''
+    file = QFile(config_data['style_file'])
+    file.open(QFile.ReadOnly | QFile.Text)
+    doc = QDomDocument()
+    doc.setContent(file)
+    root = doc.elementsByTagName('qgis.custom.style')
+    nodes = root.at(0).childNodes()
+    for i in range(0, nodes.count()):
+        elem = nodes.at(i).toElement()
+        if elem.tagName() != 'layer' or not elem.hasAttribute('id'):
+            continue
+        layer_id = elem.attribute('id')
+        if layer_id not in style_layer_ids:
+            print('skipping ', layer_id)
+        layer = QgsProject.instance().mapLayer(layer_id)
+        if not layer:
+            print('layer not found', layer_id)
+            continue
+        print('loading', layer_id)
+        style = elem.firstChild()
+        style.removeChild(style.firstChildElement('edittypes'))
+        layer.readStyle(style, errMsg)
 
 
 # quickfinder settings

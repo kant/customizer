@@ -1,0 +1,32 @@
+# QGEP customization template file
+
+# Use absolute paths!
+
+# QGIS executable
+qgis_bin: "C:\OSGeo4W64\bin\qgis.bat"
+
+# Path to the project to be created
+output_project: "C:\Temp\QGEP-customizer\qgep_project\qgep_pully.qgs"
+
+# Custom symbology file
+# Can be commented out to use default symbology
+# To create a symbology adapt and use copy_style.py script
+#style_file: /home/user/Documents/QGEP/qgis-project/styles/qgep.style
+
+# To change the CRS, uncomment this
+#srid: 2056
+
+# Define the map extent of the project
+map_center:
+  x: 540054
+  y: 151248
+
+# Add additional layers
+background_layers:
+#- file: //home/user/Documents/cadastre/cadastre_pg.qgs
+#  group: Cadastral data
+#- file: //home/user/Documents/qwat/qwat.qgs
+#  group: Network
+
+# If you wish to use a Quickfinder project search, uncomment this line
+#quickfinder: ./qgep_sige.qfts

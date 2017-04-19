@@ -7,7 +7,7 @@ from qgis.PyQt.QtCore import QFile, QTextStream
 from qgis.PyQt.QtGui import QApplication, QClipboard
 
 actions = []
-style_file = '/home/drouzaud/Documents/QGEP/sige/qgis-project/styles/qgep.style'
+style_file = ''
 
 def openProject():
     actions.append(iface.projectMenu().addAction(u"Sauver la symbologie pour QGEP"))

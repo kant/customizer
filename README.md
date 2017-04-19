@@ -6,8 +6,8 @@ It handles the following changes in the project:
 - additional background layers
 
 
-Use `customizer.sh config.yaml` to customize the QGEP project.
+Use `./customizer.sh config.yaml` to customize the QGEP project.
 
-See the template (congig.yaml.template) for an example.
+See the template [config_yaml.template](https://github.com/qwat/QGEP-customizer/blob/master/config_template.yaml) for an example.
 
 Custom symbology file can be saved from the QGIS project menu.

@@ -5,6 +5,10 @@ It handles the following changes in the project:
 - custom symbology
 - additional background layers
 
+Requirements :
+
+ - QGIS 2.18.X
+ - qgis 2 compat extension : [link](https://plugins.qgis.org/plugins/qgis2compat/)
 
 Use `./customizer.sh config.yaml` to customize the QGEP project.
 

@@ -7,7 +7,7 @@ CLOSE_QGIS=YES
 while getopts ":ud" opt; do
   case $opt in
     u)
-      UPDATE=YES
+      QGEP_UPDATE=YES
       ;;
     d)
       CLOSE_QGIS=NO
@@ -35,7 +35,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Update QGEP project
 if [[ $QGEP_UPDATE =~ YES ]]; then
   echo -e "\e[34mUpdate QGEP project ...\e[39m"
-  pushd ../QGEP &> /dev/null
+  pushd ${DIR}/QGEP &> /dev/null
   git pull
   popd &> /dev/null
 else

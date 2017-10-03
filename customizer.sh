@@ -14,7 +14,7 @@ while getopts ":ud" opt; do
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
-      echo "customizer.sh [-u] [-o] config.yaml"
+      echo "customizer.sh [-u] [-d] config.yaml"
       echo "  -u update the QGEP project (git submodule update)"
       echo "  -d keep QGIS open at the end of customization for debugging (be careful, relations are broken at this point)"
       exit 1

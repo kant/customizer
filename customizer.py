@@ -32,7 +32,7 @@ iface.actionShowPythonDialog().trigger()
 
 ####################
 # CONFIG UPDATED FROM customizer.sh
-# these 3 lines should be automaticaly updated by customizer.sh by sed commands
+# these 3 lines should be automatically updated by customizer.sh by sed commands
 original_project = '/home/rouzaudd/Documents/qgis/qgep_sige/QGEP-customizer/QGEP/project/qgep_en.qgs'
 config_file = '/home/rouzaudd/Documents/qgis/qgep_sige/sige-config.yaml'
 translation_file = '/home/rouzaudd/Documents/qgis/qgep_sige/QGEP-customizer/i18n/fr.yaml'

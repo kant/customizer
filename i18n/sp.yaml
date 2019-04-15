@@ -1,0 +1,61 @@
+layers:
+  vw_qgep_wastewater_structure:
+    name: sumidero
+    tabs:
+      General: General
+      Cover: Cubierta
+      Wastewater Structure: Estructura de aguas residuales
+      Manhole: Sumidero
+      Special Structure: Estructura especial
+      Discharge Point: Punto de descarga
+      Infiltration Installation: Instalación infiltración
+      Wastewater Node: Nodo aguas residuales
+      Covers: Cubiertas
+      Structure Parts: Partes de la estructura
+      Maintenance: Mantemimiento
+      Wastewater Nodes: Nodos aguas residuales
+      Files: Archivos
+    additional_translations:
+      manhole_function: función sumidero
+      _depth: profundidad
+
+  vw_qgep_reach:
+    name: alcance
+    tabs:
+      General: General
+      Reach: Alcance
+      Wastewater Networkelement: Elemento de red de aguas residuales
+      Channel: Canalización
+      Wastewater Structure: Estructura de aguas residuales
+      Reach Points: Puntos de alcance
+      Maintenance: Mantenimiento
+      Files: Archivos
+    additional_translations:
+
+  vw_qgep_maintenance:
+    name: Mantenimiento
+
+  vw_qgep_damage:
+    name: Daños
+
+
+
+groups:
+  Wastewater Structures: Estructuras de aguas residuales
+  Structure Parts: Partes de la estructura
+  Discharge Point: Punto de descarga
+  Special Structure: Estructura especial
+  VL Manhole: Sumidero
+  VL Structure Part: Elemento de la estructura
+  VL Cover: Cubierta
+  VL Backflow Prevention: Protección contra el reflujo
+  VL Access Aid: Dispositivo de acceso
+  VL Maintenance Event: Mantenimiento
+  VL Reach Point: Punto de alcance
+  VL Reach: Alcance
+  VL Wastewater Structure: Estructura de aguas residuales
+  VL Channel: Canalización
+  VL Inspection: Inspección
+  Value Lists: Lista de valores
+  Hydraulic: Hidráulica
+  Topology: Topología
